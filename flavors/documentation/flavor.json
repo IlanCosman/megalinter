@@ -2,6 +2,7 @@
     "descriptors": [
         "ACTION",
         "BASH",
+        "FISH",
         "KOTLIN"
     ],
     "label": "MegaLinter for documentation projects",
@@ -17,6 +18,8 @@
         "DOCKERFILE_HADOLINT",
         "EDITORCONFIG_EDITORCONFIG_CHECKER",
         "ENV_DOTENV_LINTER",
+        "FISH_PARSE",
+        "FISH_INDENT",
         "GRAPHQL_GRAPHQL_SCHEMA_LINTER",
         "GROOVY_NPM_GROOVY_LINT",
         "HTML_DJLINT",

@@ -53,6 +53,7 @@ RUN apk add --update --no-cache \
                 musl-dev \
                 openssh \
                 go \
+                fish \
                 openjdk11 \
                 nodejs \
                 npm \

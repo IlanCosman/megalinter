@@ -76,6 +76,7 @@ RUN apk add --update --no-cache \
                 lttng-ust-dev \
                 zlib \
                 zlib-dev \
+                fish \
                 openjdk11 \
                 perl \
                 perl-dev \
