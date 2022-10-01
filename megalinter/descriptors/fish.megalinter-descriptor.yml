@@ -1,0 +1,62 @@
+descriptor_id: FISH
+descriptor_type: language
+descriptor_flavors:
+  - documentation
+file_extensions:
+  - ".fih"
+install:
+  apk:
+    - fish
+test_folder: fish
+linters:
+  # Fish Built in Parser
+  - class: FishFishParse
+    linter_name: fish-parse
+    linter_url: https://fishshell.com/docs/current/cmds/fish.html
+    linter_text: Checks if a file can be parsed correctly by fish.
+    name: FISH_PARSE
+    descriptor_flavors:
+      - documentation
+    cli_executable_help: fish
+    cli_executable_version: fish
+    cli_help_arg_name: "--help"
+    cli_lint_extra_args:
+      - "--no-execute"
+    examples:
+      - "fish --no-execute myfile.fish"
+    install:
+      apk:
+        - fish
+    ide:
+      vscode:
+        - name: vscode-fish
+          url: https://marketplace.visualstudio.com/items?itemName=bmalehorn.vscode-fish
+  # fish_indent command
+  - class: FishFishIndent
+    linter_name: fish-indent
+    linter_url: https://fishshell.com/docs/current/cmds/fish_indent.html
+    linter_text: Checks if a file is formatted by fish conventions.
+    name: FISH_INDENT
+    is_formatter: true
+    descriptor_flavors:
+      - documentation
+    cli_executable_help: fish_indent
+    cli_executable_version: fish_indent
+    cli_help_arg_name: "--help"
+    cli_lint_mode: list_of_files
+    cli_lint_extra_args:
+      - "--check"
+    cli_lint_fix_arg_name: "--write"
+    help_command_return_code: 0
+    version_extract_regex: "(?<=fish_indent, version )\\d+(\\.\\d+)+"
+    test_folder: fish_indent
+    examples:
+      - "fish_indent --check myfile.fish"
+      - "fish_indent --write myfile.fish" # Fix
+    install:
+      apk:
+        - fish
+    ide:
+      vscode:
+        - name: vscode-fish
+          url: https://marketplace.visualstudio.com/items?itemName=bmalehorn.vscode-fish
